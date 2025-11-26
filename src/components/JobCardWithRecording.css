@@ -1,0 +1,405 @@
+.job-card-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.job-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+.job-card.recording {
+  border-color: #f44336;
+  box-shadow: 0 0 20px rgba(244, 67, 54, 0.3);
+  animation: recordingPulse 2s infinite;
+}
+
+@keyframes recordingPulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(244, 67, 54, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(244, 67, 54, 0.5);
+  }
+}
+
+.job-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.job-header h3 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.job-meta span {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.company {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.location {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.salary {
+  background: #e8f5e8;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.job-content {
+  margin-bottom: 20px;
+}
+
+.job-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.job-requirements {
+  margin-bottom: 20px;
+}
+
+.job-requirements h4 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.job-requirements ul {
+  list-style: none;
+  padding: 0;
+}
+
+.job-requirements li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #555;
+  line-height: 1.5;
+}
+
+.job-requirements li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.job-skills {
+  margin-bottom: 25px;
+}
+
+.job-skills h4 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+}
+
+.job-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.job-actions button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.apply-btn {
+  background: #4caf50;
+  color: white;
+  flex: 1;
+}
+
+.apply-btn:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.save-btn {
+  background: #2196f3;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.share-btn {
+  background: #ff9800;
+  color: white;
+}
+
+.share-btn:hover {
+  background: #f57c00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+}
+
+.recording-indicator {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(244, 67, 54, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.recording-dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.recording-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.recording-controls button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.record-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.record-btn:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.stop-btn {
+  background: #f44336;
+  color: white;
+  animation: pulse 1.5s infinite;
+}
+
+.stop-btn:hover {
+  background: #da190b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+.download-btn {
+  background: #2196f3;
+  color: white;
+}
+
+.download-btn:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.video-preview {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.video-preview h4 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.preview-video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.job-card-example {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.job-card-example h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 2.2rem;
+}
+
+.job-card-example p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .job-card-container {
+    padding: 15px;
+  }
+  
+  .job-card {
+    padding: 20px;
+  }
+  
+  .job-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .job-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .job-actions {
+    flex-direction: column;
+  }
+  
+  .job-actions button {
+    width: 100%;
+  }
+  
+  .recording-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .recording-controls button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .recording-indicator {
+    position: static;
+    margin-top: 15px;
+    justify-content: center;
+  }
+}
+
+/* Hover effects for interactive elements */
+.job-card:hover .skill-tag {
+  transform: scale(1.05);
+}
+
+.job-card:hover .job-actions button {
+  transform: translateY(-2px);
+}
+
+/* Focus states for accessibility */
+.job-actions button:focus,
+.recording-controls button:focus {
+  outline: 2px solid #2196f3;
+  outline-offset: 2px;
+}
+
+/* Loading state */
+.recording-controls button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
